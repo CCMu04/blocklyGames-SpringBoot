@@ -9,4 +9,6 @@ public class MapInfo {
     private String toolbox;
     private int needCoin;
     private int firstDegree;
+    private int minStep;
+    private int minBlock;
 }
