@@ -25,8 +25,8 @@ public class MapBuildController {
     @Autowired
     MapInfoMapper mapInfoMapper;
 
-    @RequestMapping("/saveGameDiff")
-    public Dvo saveMap(@RequestBody MapGame mapGame) {
+    @RequestMapping("/saveEditedMap")
+    public Dvo saveEditedMap(@RequestBody MapGame mapGame) {
         Dvo dvo = new Dvo();
 
         System.out.println("发起编辑id为" + mapGame.getDiff() + "地图的请求！");
