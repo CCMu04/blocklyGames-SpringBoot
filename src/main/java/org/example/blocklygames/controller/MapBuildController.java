@@ -46,7 +46,7 @@ public class MapBuildController {
             gameDiffQueryWrapper.clear();
             gameDiffQueryWrapper.eq("id", gameDiff.getId());
             gameDiffQueryWrapper.eq("info", gameDiff.getInfo());
-            gameDiff = gameDiffMapper.selectOne(gameDiffQueryWrapper);
+            gameDiff = gameDiffMapper.selectList(gameDiffQueryWrapper).getLast();
             System.out.println("获取插入的游戏信息：" + gameDiff);
 
             MapInfo mapInfo = new MapInfo();
