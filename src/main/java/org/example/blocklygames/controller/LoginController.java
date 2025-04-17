@@ -39,6 +39,13 @@ public class LoginController {
             QueryWrapper<UserInfo> userInfoQueryWrapper = new QueryWrapper<>();
             userInfoQueryWrapper.eq("uid", list.getFirst().getUid());
             List<UserInfo> userInfo = userInfoMapper.selectList(userInfoQueryWrapper);
+
+            if (userInfo.getFirst().getType() == 0) {
+                dvo.setCode(0);
+                dvo.setMsg("该用户已被封禁！");
+                return dvo;
+            }
+
             dvo.setData(userInfo);
         } else dvo.setMsg("请检查输入的账号或密码是否错误！");
 
@@ -73,6 +80,7 @@ public class LoginController {
             userInfo.setPhone(registerInfo.getPhone());
             userInfo.setBirthday(registerInfo.getBirthday());
             userInfo.setAddress(registerInfo.getAddress());
+            userInfo.setType(registerInfo.getType());
             userInfoMapper.insert(userInfo);
             System.out.println("成功插入用户信息表：" + userInfo);
 

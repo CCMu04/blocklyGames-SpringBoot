@@ -11,4 +11,5 @@ public class RegisterInfo {
     private String phone;
     private String birthday;
     private String address;
+    private Integer type;
 }

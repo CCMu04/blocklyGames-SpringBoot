@@ -3,8 +3,9 @@ package org.example.blocklygames.model;
 import lombok.Data;
 
 @Data
-public class UserInfo {
+public class UserDetail {
     private Integer uid;
+    private String username;
     private String name;
     private Integer sex;
     private String phone;

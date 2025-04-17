@@ -8,4 +8,5 @@ public class Game {
     private String name;
     private String english;
     private String info;
+    private Integer display;
 }
